@@ -6,7 +6,9 @@ Soon, the methods like MapGet, MapPost, MapUpdate and MapDelete will be accessib
 
 Rest.HttpClient.Types is a unit containning three objects complex types.
 > TRequestParams /// Input to Rest.HttpClient
+
 > TResult; /// Base on TResult from C#
+
 > IRestClient; /// Interface that implements on Rest.HttpClient;
 
 Using these two Units, it is easy to make requests where the traffic is Json;
