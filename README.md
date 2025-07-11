@@ -1,19 +1,58 @@
-Two units from Delphi 10.2;
+# 🌐 Delphi REST HTTP Client (Delphi 10.2+)
 
-Rest.HttpClient is a unit containning a class that encapusulate an object to make a rest request; 
-It's just need to create a record object TRequestParams and create the class. 
-Soon, the methods like MapGet, MapPost, MapUpdate and MapDelete will be accessible;
+This project provides a clean and extensible way to make RESTful HTTP requests using **Delphi 10.2**, inspired by the simplicity and structure of **C#'s `TResult` and HTTP client models**.
 
-Rest.HttpClient.Types is a unit containning three objects complex types.
-> TRequestParams /// Input to Rest.HttpClient
+---
 
-> TResult; /// Base on TResult from C#
+## 📦 Project Structure
 
-> IRestClient; /// Interface that implements on Rest.HttpClient;
+This solution is organized into **two main units**:
 
-Using these two Units, it is easy to make requests where the traffic is Json;
-To expand to other data types, such as Files, simply inherit from Rest.HttpClient and add new methods.
+### 🔹 `Rest.HttpClient`
 
-The class Rest.HttpClient is used declaring a variable IRestClient in a target classe, and passing a new instance by a 
-constructor method or a especial method that receives a IRestClient;
+Note: I had to remove the dot (.) from the unit names to ensure compatibility with Delphi 12.
+
+
+This unit contains a class that encapsulates an internal HTTP component, exposing high-level REST methods such as:
+
+- `MapGet`
+- `MapPost`
+- `MapUpdate`
+- `MapDelete`
+
+Usage requires only the creation of a `TRequestParams` record and the instantiation of the class.  
+The design promotes simplicity, type safety, and clear separation of concerns.
+
+### 🔹 `Rest.HttpClient.Types`
+
+This unit defines all the types used in the REST client layer, including:
+
+- `TRequestParams` → A structured input record for passing request parameters to the client  
+- `TResult<T>` → A generic result wrapper based on the `TResult` concept from C#  
+- `IRestClient` → Interface used to decouple implementation from usage
+
+---
+
+## 🧰 How to Use
+
+```delphi
+uses
+  Rest.HttpClient.Types, Rest.HttpClient;
+
+var
+  RestClient: IRestClient;
+  Params: TRequestParams;
+  ResultData: TResult<string>;
+begin
+  Params := TRequestParams.Create('https://api.example.com/data');
+  RestClient := TRestHttpClient.Create;
+
+  ResultData := RestClient.MapGet<string>(Params);
+
+  if ResultData.Success then
+    ShowMessage(ResultData.Data)
+  else
+    ShowMessage(ResultData.ErrorMessage);
+end;
+
  
