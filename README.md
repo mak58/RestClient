@@ -4,7 +4,7 @@ This project provides a clean and extensible way to make RESTful HTTP requests u
 
 ---
 
-## 📦 Project Structure
+## 📦 Project Structure - Version 1.0 (2024)
 
 This solution is organized into **two main units**:
 
