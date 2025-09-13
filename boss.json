@@ -1,0 +1,8 @@
+{
+  "name": "rest-fluent-12",
+  "version": "12.1.2",
+  "homepage": "https://github.com/mak58/RestClient",
+  "description": "Biblioteca Delphi para requisições REST",
+  "repository": "github:mak58/RestClient",
+  "dependencies": {}
+}
