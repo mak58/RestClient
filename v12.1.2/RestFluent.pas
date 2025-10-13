@@ -11,7 +11,9 @@ unit RestFluent;
                     |__| |   ___/
     _       _        __  |  |
    /  /  / /_  /| /  /   |__|
-  /_ /_ / /_  / |/  / Copyright (C) 2024 Márcio Koehler - v12.1.2
+  /_ /_ / /_  / |/  / Copyright (C) 2025 Márcio Koehler - v12.1.3
+
+  /// https://github.com/mak58/RestClient
  }
 
 interface
@@ -261,7 +263,6 @@ begin
     else
     begin
       RestRequest.Execute();
-
       Self.GetResultRequest(Result, RestRequest);
     end;
   except
