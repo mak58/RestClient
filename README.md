@@ -9,6 +9,7 @@ Este projeto contém uma **feature REST** que permite executar requisições RES
 - **v10.2.1** – versão inicial da feature  (Classe THttpRestAPI)
 - **v12.1.1** – melhorias de estabilidade e suporte ampliado (classes TRestHttp e TRestClientBuilder) 
 - **v12.1.2** – adição do suporte a execução **assíncrona**;
+- **v12.1.3** – adição de teste por URL vazia para unit tests;
 
 ---
 ## Exemplo de uso – v10.2.1 (10/2024)
@@ -137,6 +138,10 @@ A chamada é executada de forma síncrona e o retorno é imediato.
     AddParams(const AName, AValue: string; AKind: Byte = 4) // Params to Body
 
 > Adicionado arquivo boss.json para instalação via gerenciador de pacotes;
+
+> ## Exemplo de uso – v12.1.3 (10/2025)
+
+> Mesma implementação da versão 12.1.2. Foi adicionado teste pela URL vazia para atender testes automatizados.
 
     
  
